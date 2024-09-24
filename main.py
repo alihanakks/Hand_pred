@@ -16,8 +16,8 @@ from keypoint_classifier.keypoint_classifier import KeyPointClassifier
 # yeni veri kayıt ederken her el hareketi için bir numara belirleyin
 # ve keypoint_classifier_label dosyasına yeni el hareketlerinin isimlerini kayıt etmeyi unutmayın 
 ###
-
-
+scaler_path=r"C:\Users\aliha\OneDrive\Desktop\Hand_pred\keypoint_classifier\scaler.joblib"
+Label_path='keypoint_classifier\keypoint_classifier_label.csv'
 
 def main():
     #kamera erisim
@@ -27,7 +27,7 @@ def main():
     hands=mpHands.Hands()
     model=KeyPointClassifier()
     #Etiketleri okuma
-    with open('keypoint_classifier/keypoint_classifier_label.csv',
+    with open(Label_path,
             encoding='utf-8-sig') as f:
         keypoint_classifier_labels = csv.reader(f)
         keypoint_classifier_labels = [
@@ -145,8 +145,7 @@ def Veri_alma(landmark_list,scaler=False):
         itertools.chain.from_iterable(temp_landmark_list))
     
     # Olcekleme MinMaxscaler 
-    if scaler==True :
-        scaler_path=r"C:\Users\aliha\OneDrive\Desktop\el_algılama\keypoint_classifier\scaler.joblib"
+    if scaler==True
         scaler=load(scaler_path)
         data = pd.DataFrame(temp_landmark_list )
         data = data.T
