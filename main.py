@@ -10,6 +10,13 @@ import tensorflow as tf #tensorflow version==2.17.0
 from joblib import load
 from keypoint_classifier.keypoint_classifier import KeyPointClassifier 
 
+########################################################################
+###
+# not 
+# yeni veri kayıt ederken her el hareketi için bir numara belirleyin
+# ve keypoint_classifier_label dosyasına yeni el hareketlerinin isimlerini kayıt etmeyi unutmayın 
+###
+
 
 
 def main():
